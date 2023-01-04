@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 //@Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-//    @Query("select u from usuarios u where u.email like :email")
+    @Query("select u from usuario u where u.email like :email")
     Usuario findByEmail(@Param("email") String email);
 }

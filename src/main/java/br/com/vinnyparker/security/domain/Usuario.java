@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "usuarios", indexes = {@Index(name = "idx_usuario_email", columnList = "email")})
+@Table(name = "usuario", indexes = {@Index(name = "idx_usuario_email", columnList = "email")})
 public class Usuario extends AbstractEntity {	
 	
 	@Column(name = "email", unique = true, nullable = false)
@@ -22,7 +22,7 @@ public class Usuario extends AbstractEntity {
 	
 	@ManyToMany
 	@JoinTable(
-		name = "usuarios_tem_perfis",
+		name = "usuario_tem_perfis",
         joinColumns = { @JoinColumn(name = "usuario_id", referencedColumnName = "id") },
         inverseJoinColumns = { @JoinColumn(name = "perfil_id", referencedColumnName = "id") }
 	)
